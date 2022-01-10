@@ -25,11 +25,11 @@ done
 
 # start
 tor &
-
+echo --tor-----xray--
 /xray -config /xray.json &
-
+echo -----sshd
 /usr/sbin/sshd &
-
+echo -----wstunnel
 wstunnel -s 0.0.0.0:8989 &
-
+echo -----caddy
 caddy run --config /etc/caddy/Caddyfile --adapter caddyfile

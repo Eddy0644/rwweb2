@@ -54,4 +54,5 @@ header Connection *Upgrade*
 header Upgrade    websocket
 path /wst
 }
-reverse_proxy @websocket_wst 127.0.0.1:8989
+#reverse_proxy @websocket_wst 127.0.0.1:8989
+reverse_proxy /wst 127.0.0.1:8989
