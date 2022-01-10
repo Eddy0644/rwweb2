@@ -14,7 +14,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
     && ssh-keygen -t ecdsa -P "" -f /etc/ssh/ssh_host_ecdsa_key \
     && ssh-keygen -t ed25519 -P "" -f /etc/ssh/ssh_host_ed25519_key \
     && echo "root:netcyroot" | chpasswd
-RUN npm install wstunnel
+RUN cd ~ && npm install wstunnel
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
 
