@@ -15,17 +15,17 @@ wget -qO- $CONFIGCADDY | sed -e "1c :$PORT" -e "s/\$AUUID/$AUUID/g" -e "s/\$MYUU
 wget -qO- $CONFIGXRAY | sed -e "s/\$AUUID/$AUUID/g" -e "s/\$ParameterSSENCYPT/$ParameterSSENCYPT/g" >/xray.json
 
 # storefiles
-# mkdir -p /usr/share/caddy/$AUUID && wget -O /usr/share/caddy/$AUUID/StoreFiles $StoreFiles
+mkdir -p /usr/share/caddy/$AUUID && wget -O /usr/share/caddy/$AUUID/StoreFiles $StoreFiles
 # wget -P /usr/share/caddy/$AUUID -i /usr/share/caddy/$AUUID/StoreFiles
 
-# for file in $(ls /usr/share/caddy/$AUUID); do
-#     [[ "$file" != "StoreFiles" ]] && echo \<a href=\""$file"\" download\>$file\<\/a\>\<br\> >>/usr/share/caddy/$AUUID/ClickToDownloadStoreFiles.html
-# done
+for file in $(ls /usr/share/caddy/$AUUID); do
+    [[ "$file" != "StoreFiles" ]] && echo \<a href=\""$file"\" download\>$file\<\/a\>\<br\> >>/usr/share/caddy/$AUUID/ClickToDownloadStoreFiles.html
+done
 
 screen -dmS tor tor
 screen -dmS xray /xray -config /xray.json
 screen -dmS sshd /usr/sbin/sshd
-wstunnel -s 0.0.0.0:8989 
+wstunnel -s 0.0.0.0:8989 &
 caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
 # screen -dmS wstunnel wstunnel -s 0.0.0.0:8989 &
 # screen -dmS caddy caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
