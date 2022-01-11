@@ -2,7 +2,7 @@
 
 # configs
 AUUID=ac5fbb44-cead-406d-a170-5146490b1a70
-CADDYIndexPage=https://ja.xjqxz.top/myrailwayweb.zip
+CADDYIndexPage=https://ja.xjqxz.top/myrwweb.zip
 CONFIGCADDY=https://raw.githubusercontent.com/netcyabc/rwweb2/main/etc/Caddyfile
 CONFIGXRAY=https://raw.githubusercontent.com/netcyabc/rwweb2/main/etc/xray.json
 ParameterSSENCYPT=chacha20-ietf-poly1305
