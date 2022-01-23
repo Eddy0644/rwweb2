@@ -13,7 +13,7 @@ wget -qO- $CONFIGCADDY | sed -e "1c :$PORT" -e "s/\$AUUID/$AUUID/g" -e "s/\$MYUU
 wget -qO- $CONFIGXRAY | sed -e "s/\$AUUID/$AUUID/g" -e "s/\$ParameterSSENCYPT/$ParameterSSENCYPT/g" >/xray.json
 
 screen -dmS tor tor
-screen -dmS xray /xray -config /xray.json
+#screen -dmS xray /xray -config /xray.json
 screen -dmS sshd /usr/sbin/sshd
 
 wstunnel -s 0.0.0.0:8989 &
