@@ -2,7 +2,6 @@ FROM alpine:edge
 
 RUN apk update && \
     apk add --no-cache ca-certificates caddy tor wget npm screen && \
-
     rm -rf /var/cache/apk/*
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \    
     && apk add --no-cache openssh tzdata \
