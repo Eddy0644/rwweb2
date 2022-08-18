@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v1
       with:
         registry: https://ghcr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_b833dc458cd04adfbefd6bfe1e4fa13a }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_2c3814a6b4e84c86898792d2d1ed4dbb }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_9cb74c21ffd247658393425c98a80840 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_b93eb16378444a9589d936fe3a12e328 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: ghcr.io/${{ secrets.AzureAppService_ContainerUsername_b833dc458cd04adfbefd6bfe1e4fa13a }}/netcyabc/az-rwweb2:${{ github.sha }}
+        tags: ghcr.io/${{ secrets.AzureAppService_ContainerUsername_9cb74c21ffd247658393425c98a80840 }}/mcr.microsoft.com/appsvc/staticsite:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'ncywa'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_1523908efd8f4577872e1f25904ad123 }}
-        images: 'ghcr.io/${{ secrets.AzureAppService_ContainerUsername_b833dc458cd04adfbefd6bfe1e4fa13a }}/netcyabc/az-rwweb2:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_6740dbb4852a4d8ea900b0a0836fa7f3 }}
+        images: 'ghcr.io/${{ secrets.AzureAppService_ContainerUsername_9cb74c21ffd247658393425c98a80840 }}/mcr.microsoft.com/appsvc/staticsite:${{ github.sha }}'
