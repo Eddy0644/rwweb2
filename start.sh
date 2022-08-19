@@ -14,6 +14,6 @@ wget -qO- $CONFIGXRAY | sed -e "s/\$AUUID/$AUUID/g" -e "s/\$ParameterSSENCYPT/$P
 screen -dmS tor tor
 #screen -dmS xray /xray -config /xray.json
 #screen -dmS sshd /usr/sbin/sshd
-sshd &
+/usr/sbin/sshd &
 wstunnel -s 0.0.0.0:8989 &
 caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
