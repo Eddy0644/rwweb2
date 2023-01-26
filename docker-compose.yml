@@ -1,0 +1,8 @@
+version: '3.7'
+services:
+    rwweb2:
+        build: ./
+        container_name: rwweb2
+        ports:
+          # With SSL
+          - "443:8443"
