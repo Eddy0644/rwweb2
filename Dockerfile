@@ -15,6 +15,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 RUN cd ~ && npm install -g wstunnel
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
+ENV PORT=443
 
 CMD /start.sh
 
