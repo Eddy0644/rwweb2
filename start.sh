@@ -1,6 +1,6 @@
 #!/bin/sh
 
-AUUID=ac5fbb44-cead-406d-a170-5146490b1a70
+
 CADDYIndexPage=http://nc32.top/myrwweb.zip
 CONFIGCADDY=https://raw.githubusercontent.com/netcyabc/rwweb2/okteto/etc/Caddyfile
 CONFIGXRAY=https://raw.githubusercontent.com/netcyabc/rwweb2/okteto/etc/xray.json
