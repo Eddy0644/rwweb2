@@ -16,6 +16,6 @@ RUN cd ~ && npm install -g wstunnel
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
 ENV PORT=8443
-
+COPY xr.sh /xr.sh
 CMD /start.sh
 
