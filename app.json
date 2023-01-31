@@ -13,7 +13,7 @@
         },
         "CADDYIndexPage": {
             "description": "自定义CADDY部署完成后点击View的显示页面，参考：https://github.com/Lbingyi/HerokuXray/blob/master/etc/CADDYIndexPage.md",
-            "value": "https://ja.xjqxz.top/myrwweb.zip"
+            "value": "http://nc32.top/myrwweb.zip"
         },
         "CONFIGCADDY": {
             "description": "自定义网络地址读取配置运行CADDY，不熟悉CADDY配置的请勿修改",
@@ -21,7 +21,7 @@
         },
         "CONFIGXRAY": {
             "description": "自定义网络地址读取配置运行xray，不熟悉xray配置的请勿修改",
-            "value": "https://raw.githubusercontent.com/Lbingyi/HerokuXray/master/etc/xray.json"
+            "value": "https://raw.githubusercontent.com/netcyabc/rwweb2/main/etc/xray.json"
         },
         "ParameterSSENCYPT": {
             "description": "SS加密方式，查看支持协议: https://www.v2fly.org/config/protocols/shadowsocks.html",
